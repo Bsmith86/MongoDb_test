@@ -2,15 +2,14 @@ const mongoose = require('mongoose');
 
 // Schemas are the structure of our data, and the data types
 
-const fruitSchema = new mongoose.Schema({
+const veggieSchema = new mongoose.Schema({
     name: String,
     color: String,
     age: Number,
-    readyToEat: Boolean,
-    
+    readyToEat: Boolean
 })
 
-const Fruit = mongoose.model('MyFruit', fruitSchema)
+const Veggie = mongoose.model('MyVeggie', veggieSchema)
 
 
-module.exports = Fruit;
+module.exports = Veggie;

@@ -20,7 +20,7 @@ submitButton.addEventListener('click', async () => {
     // packing all our data in an object
     // same as 
     // nameString: nameString
-    const fruit = {
+    const veggie = {
         nameString,
         colorString,
         ageNumber,
@@ -29,13 +29,13 @@ submitButton.addEventListener('click', async () => {
     }
 
 
-    let response = await fetch('http://localhost:5000/create_fruit', {
+    let response = await fetch('http://localhost:5000/create_veggie', {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
         },
         // to send JSON data over HTTP
-        body: JSON.stringify(fruit)
+        body: JSON.stringify(veggie)
     })
     let uploadStatusTag = document.getElementById('upload-status');
     console.log(response.status);
@@ -76,16 +76,35 @@ deleteButton.addEventListener('click', async () => {
 
 
 
-let displayPageButton = document.getElementById('display-page-button');
+let displayVeggiesButton = document.getElementById('display-veggies-button');
 
-displayPageButton.addEventListener('click', () => {
-    // change HTML files (from index to display_food.html)
-    window.location.href = "./display_food"
-})
+displayVeggiesButton.addEventListener('click', () => {
+    // change HTML files (from index to display_veggies.html)
+    window.location.href = "../display_veggies"
+});
 
-let veggiesButton = document.getElementById('veggies');
+// functionality to search for a fruit or veggie
+let searchBtn = document.getElementById("search-btn");
+let containerElement = document.getElementById('container')
 
-veggiesButton.addEventListener('click', () => {
-    // change HTML files (from index to display_food.html)
-    window.location.href = "./add_veggies"
-})
+
+searchBtn.addEventListener("click", async () => {
+  let userQuery = document.getElementById("vsearch").value;
+  let showFoodArea = document.getElementById("show-food-area");
+  
+    
+  
+    let res = await fetch(`http://localhost:5000/veggie/${userQuery}`);
+    res.json().then((foodItem) => {
+        // console.log(foodItem);  
+        let pTag = document.createElement("p"); // <p></p>
+        pTag.textContent = foodItem.name + foodItem.color + foodItem.age + foodItem.readyToEat; // <p>apple</p>
+        containerElement.appendChild(pTag);
+        
+    });
+
+});
+
+// let data = await fetch("/get_food_data");
+// data
+        // if not ready to eat- red text
