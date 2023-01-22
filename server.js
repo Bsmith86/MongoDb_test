@@ -80,6 +80,13 @@ app.delete("/delete_nameless_data", async (req, res) => {
 
    res.send({data: `deleted ${response.deletedCount} items.`})
 })
+app.delete("/delete_nameless_veggie", async (req, res) => {
+   let response = await MyVeggie.deleteMany({name: ""});
+
+   console.log(response);
+
+   res.send({data: `deleted ${response.deletedCount} items.`})
+})
 
 app.get('/get_food_data', async (req, res) => {
     // get data from database
@@ -124,6 +131,13 @@ app.get('/veggies', async (req, res) => {
 app.get('/veggie/:veggieName', async (req, res) => {
     let veggie = req.params.veggieName;
     let response = await MyVeggie.findOne({name: veggie})
+    console.log(response);
+    res.json(response)
+
+})
+app.get('/fruit/:fruitName', async (req, res) => {
+    let fruit = req.params.fruitName;
+    let response = await MyFruit.findOne({name: fruit})
     console.log(response);
     res.json(response)
 

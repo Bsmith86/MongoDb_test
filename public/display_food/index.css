@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 20px 20px 0 30px;
+    background: #494f73;
+}
+
+body {
+    color: rgb(30, 30, 27);
+}
+
+h1 {
+    color: rgb(13, 13, 13);
+}

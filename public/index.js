@@ -89,3 +89,25 @@ veggiesButton.addEventListener('click', () => {
     // change HTML files (from index to display_food.html)
     window.location.href = "./add_veggies"
 })
+
+// functionality to search for a fruit or veggie
+let searchBtn = document.getElementById("search-btn");
+let containerElement = document.getElementById('container')
+
+
+searchBtn.addEventListener("click", async () => {
+  let userQuery = document.getElementById("fsearch").value;
+  let showFoodArea = document.getElementById("show-food-area");
+  
+    
+  
+    let res = await fetch(`http://localhost:5000/fruit/${userQuery}`);
+    res.json().then((foodItem) => {
+        // console.log(foodItem);  
+        let pTag = document.createElement("p"); // <p></p>
+        pTag.textContent = "Name: " + foodItem.name + ", Color: " + foodItem.color + ", Age: " + foodItem.age + ", Ready to Eat: " + foodItem.readyToEat; // <p>apple</p>
+        containerElement.appendChild(pTag);
+        
+    });
+
+});

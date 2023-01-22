@@ -65,7 +65,7 @@ submitButton.addEventListener('click', async () => {
 let deleteButton = document.getElementById('delete');
 
 deleteButton.addEventListener('click', async () => {
-   let response = await fetch('http://localhost:5000/delete_nameless_data', {
+   let response = await fetch('http://localhost:5000/delete_nameless_veggie', {
         method: "delete",
     });
     // console.log(response);
@@ -98,7 +98,7 @@ searchBtn.addEventListener("click", async () => {
     res.json().then((foodItem) => {
         // console.log(foodItem);  
         let pTag = document.createElement("p"); // <p></p>
-        pTag.textContent = foodItem.name + foodItem.color + foodItem.age + foodItem.readyToEat; // <p>apple</p>
+        pTag.textContent = "Name: " + foodItem.name + ", Color: " + foodItem.color + ", Age: " + foodItem.age + ", Ready to Eat: " + foodItem.readyToEat; // <p>apple</p>
         containerElement.appendChild(pTag);
         
     });

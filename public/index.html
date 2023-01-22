@@ -9,17 +9,29 @@
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
+   <header>
     <nav id="navbar">
-        <h1>Home</h1>
-        <h1 id="veggies">Veggies</h1>
-        <h1 id="display-page-button">Display Food</h1>
-        <h1 id="delete">Delete Bad Data</h1>
+        <ul class="nav__links">
+            <li><a id='home'href="index.html">Home</a></li>
+            <li><a id="veggies" href="/add_veggies/">Veggies</a></li>
+            <li><a id="display-page-button" href="/display_food/index.html">Display Fruit</a></li>
+            <li><a id="delete" href="#">Delete Bad Data</a></li>
+        </ul>
+        </nav>
         <div class="input-container">
-            
-        </div>
-    </nav>
-    <div id="container">
+      
+            <label for="fsearch">Fruit Search:</label>
+            <input type="search" id="fsearch" name="fsearch">
+            <button id="search-btn">Search</button>
+        
+    </div>
+   </header>
+    <div class="container">
         <p id="upload-status"></p> 
+
+        <div class="addFruit">
+        <h1>Add Fruit</h1> <img id="fruitPic" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdebbienet.com%2Fwp-content%2Fuploads%2F2017%2F10%2FFruit-Chunks-e1507132059421-150x145.jpg&f=1&nofb=1&ipt=ef7ceea49f6ebb98f1cbfb77c68ead932c11bbe2d4d40028543866ea6b08be4d&ipo=images">
+        </div>
         
         <div class="input-container">
             <label for="name-input">Name</label>
@@ -48,7 +60,9 @@
         </div> -->
         <button id="submit-button">Create Food</button>
     </div>
-    
+    <div id="container">
+        
+    </div>
 
 </body>
 </html>

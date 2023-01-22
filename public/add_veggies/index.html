@@ -9,12 +9,23 @@
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <nav id="navbar">
-        <h1>Home</h1>
-        <h1 id="display-veggies-button">Display Veggies</h1>
-        <h1 id="delete">Delete Bad Data</h1>
-       
-    </nav>
+    <header>
+        <nav id="navbar">
+            <ul class="nav__links">
+                <li><a id='home'href="../index.html">Home</a></li>
+                <li><a id="display-veggies-button" href="#">Display Veggies</a></li>
+                <li><a id="delete" href="#">Delete Bad Data</a></li>
+            </ul>
+            </nav>
+            <div class="input-container">
+      
+                <label for="vsearch">Veggie Search:</label>
+                <input type="search" id="vsearch" name="vsearch">
+                <button id="search-btn">Search</button>
+            
+        </div>
+       </header>
+    <h1>Add Veggie</h1>
     <div id="container">
         <p id="q_response"></p>
         <p id="upload-status"></p>  
@@ -46,13 +57,7 @@
         <button id="submit-button">Create Veggie</button>
     </div>
     
-    <div class="input-container">
-      
-            <label for="vsearch">Veggie Search:</label>
-            <input type="search" id="vsearch" name="vsearch">
-            <button id="search-btn">Search</button>
-        
-    </div>
+    
     <div id="container">
         
     </div>
